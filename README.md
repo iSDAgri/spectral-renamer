@@ -11,4 +11,7 @@ icr_172598_H1 ==> icr172598.1
 icr_172599_A2 ==> icr172599.0
 icr_172599_B2 ==> icr172599.1
 ...
+1. Eliminate the first underscore. 
+2. Replace the second underscore with a period.
+3. Replace the suffix with an incremental integer index starting from 0.
 
