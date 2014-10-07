@@ -1,16 +1,19 @@
 #!/usr/bin/env python
 # usage: ./renamer [data_directory]
 
-import os, re
+import os, re, sys
 from collections import defaultdict
 
-data_dir = "test" 
+if len(sys.argv) < 2:
+    data_dir = "test" 
+else:
+    data_dir = sys.argv[1]
 
 tally = defaultdict(int)
 files = sorted(os.listdir(data_dir))
 for a in files: 
-    b = re.sub('_','',a, 1) 
-    c = re.sub('_','.',b,1) 
+    b = re.sub('_', '', a, 1) 
+    c = re.sub('_', '.', b, 1) 
     prefix = c.split('.')[0]
     tally[prefix] += 1 
     d =  prefix + "." + str(tally[prefix]-1)
