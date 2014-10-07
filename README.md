@@ -15,3 +15,12 @@ icr_172599_B2 ==> icr172599.1
 2. Replace the second underscore with a period.
 3. Replace the suffix with an incremental integer index starting from 0.
 
+
+Revised problem: 
+1. First underscore may not be present, or may be a space.
+2. Alphabetic prefix should be lowercased.
+
+New strategy:
+1. Use regular expressions to extract [alphabetic prefix] [optional delimiter] [numerical ssn] [underscore] [microtray index]
+2. Construct: lowercase[alphabetic prefix] [numerical ssn] [underscore] [integer index]
+

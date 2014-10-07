@@ -17,6 +17,18 @@ for i in xrange(0,num_files):
     col = (i / 8) + 1
     microtray_code = chr(row + 65) + str(col)   
 
-    fn = "{0}_{1}_{2}".format(prefix, ssn, microtray_code)
+    if 0 == i % 3:
+        delimiter = " "
+    elif 1 == i % 3:
+        delimiter = ""
+    elif 2 == i % 3:
+        delimiter = "_"
+
+    if 0 == i % 2:
+        prefix = prefix.upper()
+    else:
+        prefix = prefix.lower()
+
+    fn = "{0}{1}{2}_{3}".format(prefix, delimiter, ssn, microtray_code)
     open(os.path.join(output_dir,fn),'a').close()
 
